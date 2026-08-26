@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="A modern worldwide analog clock, stopwatch, and alarm."
+  <title>Chronos / World Clock</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="app-shell">
+    <header class="topbar"><a class="brand" href="../index.html"><span class="brand-mark">C</span><span>CHRONOS <small>TIME / EVERYWHERE</small></span></a><span class="live"><i></i> LIVE CLOCK</span></header>
+    <section class="clock-section">
+      <div class="location-row"><div><p class="eyebrow">WORLD CLOCK / LOCAL VIEW</p><h1 id="location-name">London, United Kingdom</h1></div><label class="timezone-label" for="timezone">Choose city<select id="timezone"><option value="Europe/London">London, United Kingdom</option><option value="America/New_York">New York, United States</option><option value="Asia/Tokyo">Tokyo, Japan</option><option value="Asia/Kolkata">Kolkata, India</option><option value="Australia/Sydney">Sydney, Australia</option><option value="Africa/Cairo">Cairo, Egypt</option><option value="America/Los_Angeles">Los Angeles, United States</option></select></label></div>
+      <div class="clock-layout"><div class="clock-face" aria-label="Analog clock"><div class="tick tick-12"></div><div class="tick tick-3"></div><div class="tick tick-6"></div><div class="tick tick-9"></div><span class="clock-number n12">12</span><span class="clock-number n3">3</span><span class="clock-number n6">6</span><span class="clock-number n9">9</span><div class="hand hour" id="hour-hand"></div><div class="hand minute" id="minute-hand"></div><div class="hand second" id="second-hand"></div><div class="clock-pin"></div><span class="clock-label">CHRONOS</span></div><div class="time-info"><p class="eyebrow">CURRENT TIME</p><div id="digital-time" class="digital-time">00:00:00</div><p id="date-text" class="date-text">Monday, January 1, 2024</p><div class="utc-badge">UTC <b id="utc-offset">+00:00</b></div></div></div>
+    </section>
+    <section class="tools"><div class="tabs" role="tablist"><button class="tab active" data-tab="stopwatch" role="tab">Stopwatch</button><button class="tab" data-tab="alarm" role="tab">Alarm</button></div><div class="tool-panel" id="stopwatch-panel"><div><p class="eyebrow">PRECISION TIMER</p><div class="stopwatch-time" id="stopwatch-time">00:00:00.00</div></div><div class="tool-actions"><button class="primary" id="start-stopwatch">Start <span>▶</span></button><button class="secondary" id="reset-stopwatch">Reset</button></div></div><div class="tool-panel hidden" id="alarm-panel"><div><p class="eyebrow">SET AN ALARM</p><div class="alarm-inputs"><input id="alarm-time" type="time" aria-label="Alarm time"><label><input id="alarm-enabled" type="checkbox" checked> Enable</label></div><p id="alarm-status" class="alarm-status">No alarm set</p></div><button class="primary" id="set-alarm">Set alarm <span>◷</span></button></div></section>
+    <footer><span>Designed for the moments between moments</span><span id="alarm-notice"></span></footer>
+  </main><script src="script.js"></script>
+</body>
+</html>
